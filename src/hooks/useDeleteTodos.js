@@ -9,7 +9,7 @@ function useDeleteTodos(deleteTodos, initialState) {
     const [filteredData, setFilteredData] = useState(initialState);
 
 
-    const deleteThisTodo = async ({id}) => {
+    const deleteThisTodo = async ({ id }) => {
         setIsDeleting(true);
         try {
             const deletedData = await deleteTodos(id);
@@ -23,7 +23,7 @@ function useDeleteTodos(deleteTodos, initialState) {
         }
     }
 
-    return { isDeleting, filteredData, errors ,deleteThisTodo};
+    return { isDeleting, filteredData, errors, deleteThisTodo };
 }
 
 export default useDeleteTodos;

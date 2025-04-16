@@ -7,7 +7,7 @@ const AddTodos = () => {
 
   const { isLoading, errors, addNewData, postTodos } = usePostTodos(addTodos, '');
 
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     postTodos({ todos: inputTodo });
@@ -21,7 +21,7 @@ const AddTodos = () => {
       {isLoading ? <p>Adding todo</p> :
         <form onSubmit={handleSubmit}>
           <input placeholder='Add a todo' type='text' onChange={(e) => setInputTodo(e.target.value)} />
-          <button type='submit' >Add</button>
+          <button type='submit' >{isLoading ? "Adding" : "Add"}</button>
         </form>}
 
     </div>

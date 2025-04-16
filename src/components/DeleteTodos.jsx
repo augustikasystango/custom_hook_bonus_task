@@ -11,13 +11,16 @@ const DeleteTodos = (id) => {
 
     const handleDelete = () => {
         deleteThisTodo(id);
-        console.log(id);
+
     }
 
 
+
     return (
+
         <div>
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={handleDelete} disabled={isDeleting}>{isDeleting ? "Deleting" : "Delete"}</button>
+            {errors && <p>Error deleting todo.</p>}
         </div>
     )
 }
