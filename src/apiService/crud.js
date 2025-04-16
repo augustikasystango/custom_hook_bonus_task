@@ -26,6 +26,7 @@ const addTodos= async(todos)=>{
 }
 
 const deleteTodos = async(id)=>{
+    console.log(id,'---29')
     try{
         const res = await axios.delete(`https://67eb8191aa794fb3222a78fb.mockapi.io/users/users/${id}`);
         return res?.data;

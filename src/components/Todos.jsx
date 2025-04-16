@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { getTodos } from '../apiService/crud';
 import useGetTodos from '../hooks/useGetTodos';
 import AddTodos from './AddTodos';
+import DeleteTodos from './DeleteTodos';
 
 const Todos = () => {
 
@@ -17,7 +18,10 @@ const Todos = () => {
         
       {
         todosData.map((todo)=>(<ul key={todo.id}>
-            <li>{todo.todos}</li>
+            <li>{todo.todos}
+               <DeleteTodos id={todo.id}/>
+            </li>
+
         </ul>))
       }
     </div>

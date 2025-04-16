@@ -5,7 +5,9 @@ import { addTodos } from '../apiService/crud';
 const AddTodos = () => {
   const [inputTodo, setInputTodo] = useState('');
 
-  const { isLoading, errors, addNewData, postTodos } = usePostTodos(addTodos, '')
+  const { isLoading, errors, addNewData, postTodos } = usePostTodos(addTodos, '');
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     postTodos({ todos: inputTodo });
